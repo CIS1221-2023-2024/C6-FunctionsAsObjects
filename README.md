@@ -14,7 +14,7 @@ Overview:
 We aim to create a 2D slider puzzle using Python and Java. By creating this puzzle, we aim to explore the concepts of
 1.	Functions as objects
 2.	event handling 
-3.	lambda expressions.
+3.	lambda expressions
 
 
 Functions as objects
