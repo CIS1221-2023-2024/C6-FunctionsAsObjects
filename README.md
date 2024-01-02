@@ -33,3 +33,5 @@ Event Handling
 lambda Expressions
 •	updating the position of a piece or checking if it fits into a place
 •	calculating a score based on time taken or moves made
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
