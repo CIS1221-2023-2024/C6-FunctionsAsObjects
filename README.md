@@ -42,13 +42,14 @@ Steps to run the code
 Programming Language: Python (currently) 
 IDE: Visual Studio Code
 
-After downloading Visual Studio Code make sure to install these 5 extensions before running the code: 
+After downloading Visual Studio Code make sure to install these 6 extensions before running the code: 
 • Code Runner
 • Pygame Snippets 
 • Pylance 
 • Python 
 • Python Resource Monitor
+• Tkinter
 
-Code should run normally if these 5 extensions are installed.
+The code should run normally if these 5 extensions are installed.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
