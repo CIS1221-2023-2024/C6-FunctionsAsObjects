@@ -1,6 +1,5 @@
 import pygame 
-#update
-#TEST
+#testing git with challenger
 
 #Initilizing pygame extenstion
 pygame.init() 
@@ -81,8 +80,6 @@ def draw_grid(background):
   # calculating position to centre grid at the bottom 
   start_x = (BACKGROUND_WIDTH - LEVEL_SIZE * TILE_SIZE) // 2
   start_y = (BACKGROUND_HEIGHT - LEVEL_SIZE * TILE_SIZE) // 1.2
-
-
 
   for row in range(LEVEL_SIZE + 1):
         pygame.draw.line(background, (150, 150, 150), 
