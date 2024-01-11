@@ -94,6 +94,13 @@ def draw_grid(background):
                          (start_x + col * TILE_SIZE, start_y + LEVEL_SIZE * TILE_SIZE))
 
 
+def update_tile_positions(self):
+         for row_index, row in enumerate(self.tiles_grid):
+          for col_index, tile_id in enumerate(row):
+            for tile_sprite in self.all_sprites:
+                if tile_sprite.id == tile_id:
+                    tile_sprite.rect.topleft = (col_index * TILE_SIZE + self.start_x, row_index * TILE_SIZE + self.start_y)
+                    break
 
 run = True
 while run:  
