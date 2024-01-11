@@ -102,17 +102,28 @@ def update_tile_positions(self):
                     tile_sprite.rect.topleft = (col_index * TILE_SIZE + self.start_x, row_index * TILE_SIZE + self.start_y)
                     break
 
-run = True
-while run:  
-  
+# TileClickHandler class
+class TileClickHandler:
+    def __init__(self, game):
+        self.game = game
 
-  #lines 17 - 19 act as an event handler 
-  for event in pygame.event.get():  
-     if event.type == pygame.QUIT:
-        run = False
-  
-  # Clear the screen and draw the grid
-  draw_grid(background)
-  pygame.display.update()      
-        
-pygame.quit()
+    def get_blank_position(self):
+        for i, row in enumerate(self.game.tiles_grid):
+            if 0 in row:
+                return (row.index(0), i)  # Column, Row of the blank tile
+
+    def switch_tiles(self, pos1, pos2):
+        print(f"Switching tiles: {pos1} and {pos2}")
+        self.game.tiles_grid[pos1[1]][pos1[0]], self.game.tiles_grid[pos2[1]][pos2[0]] = \
+            self.game.tiles_grid[pos2[1]][pos2[0]], self.game.tiles_grid[pos1[1]][pos1[0]]
+        self.game.update_tile_positions()  # Update tile positions after switching
+
+    def handle_click(self, mouse_pos):
+        grid_x, grid_y = (mouse_pos[0] - self.game.start_x) // TILE_SIZE, (mouse_pos[1] - self.game.start_y) // TILE_SIZE
+        grid_x, grid_y = int(grid_x), int(grid_y)
+        print(f"Clicked on tile at grid position: ({grid_x}, {grid_y})")
+
+        if 0 <= grid_x < LEVEL_SIZE and 0 <= grid_y < LEVEL_SIZE:
+            blank_x, blank_y = self.get_blank_position()
+            if (abs(blank_x - grid_x) == 1 and blank_y == grid_y) or (abs(blank_y - grid_y) == 1 and blank_x == grid_x):
+                self.switch_tiles((grid_x, grid_y), (blank_x, blank_y))
