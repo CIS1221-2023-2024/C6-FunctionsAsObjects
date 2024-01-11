@@ -6,7 +6,7 @@ pygame.init()
 #Creating width and height for screen/background
 BACKGROUND_WIDTH = 1000
 BACKGROUND_HEIGHT = 600
-
+ #github 
 #Line responsible for creating the screen 
 background = pygame.display.set_mode((BACKGROUND_WIDTH, BACKGROUND_HEIGHT))
 
