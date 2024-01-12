@@ -1,19 +1,17 @@
 import pygame 
-#testing git with challenger
-
-#Initilizing pygame extenstion
 pygame.init() 
 
 #Creating width and height for screen/background
 BACKGROUND_WIDTH = 1000
 BACKGROUND_HEIGHT = 600
+LEVEL_SIZE = 4    
+TILE_SIZE = 90
 
 #Line responsible for creating the screen 
 background = pygame.display.set_mode((BACKGROUND_WIDTH, BACKGROUND_HEIGHT))
 
 #Initilising some variables 
-LEVEL_SIZE = 4    
-TILE_SIZE = 90
+
 
 # Tile class
 class Tile(pygame.sprite.Sprite):
@@ -61,7 +59,7 @@ class Game:
                 number += 1
             grid.append(row)
         return grid
-
+     
     def draw_tiles(self):
          for y, row in enumerate(self.tiles_grid):
           for x, tile in enumerate(row):
@@ -74,24 +72,24 @@ class Game:
         self.draw_grid()
         pygame.display.flip()
 
+
+
 # Making the actual grid 
-def draw_grid(background):
+    def draw_grid(self):
 
   # calculating position to centre grid at the bottom 
-  start_x = (BACKGROUND_WIDTH - LEVEL_SIZE * TILE_SIZE) // 2
-  start_y = (BACKGROUND_HEIGHT - LEVEL_SIZE * TILE_SIZE) // 1.2
+     for row in range(LEVEL_SIZE + 1):
+        pygame.draw.line(self.background, (150, 150, 150), 
+                         (self.start_x, self.start_y + row * TILE_SIZE), 
+                         (self.start_x + LEVEL_SIZE * TILE_SIZE, self.start_y + row * TILE_SIZE))
+        
+     for col in range(LEVEL_SIZE + 1):
+        pygame.draw.line(self.background, (150, 150, 150), 
+                         (self.start_x + col * TILE_SIZE, self.start_y), 
+                         (self.start_x + col * TILE_SIZE, self.start_y + LEVEL_SIZE * TILE_SIZE))
+ 
 
-  for row in range(LEVEL_SIZE + 1):
-        pygame.draw.line(background, (150, 150, 150), 
-                         (start_x, start_y + row * TILE_SIZE), 
-                         (start_x + LEVEL_SIZE * TILE_SIZE, start_y + row * TILE_SIZE))
-  for col in range(LEVEL_SIZE + 1):
-        pygame.draw.line(background, (150, 150, 150), 
-                         (start_x + col * TILE_SIZE, start_y), 
-                         (start_x + col * TILE_SIZE, start_y + LEVEL_SIZE * TILE_SIZE))
-
-
-def update_tile_positions(self):
+    def update_tile_positions(self):
          for row_index, row in enumerate(self.tiles_grid):
           for col_index, tile_id in enumerate(row):
             for tile_sprite in self.all_sprites:
@@ -124,3 +122,5 @@ class TileClickHandler:
             blank_x, blank_y = self.get_blank_position()
             if (abs(blank_x - grid_x) == 1 and blank_y == grid_y) or (abs(blank_y - grid_y) == 1 and blank_x == grid_x):
                 self.switch_tiles((grid_x, grid_y), (blank_x, blank_y))
+
+
