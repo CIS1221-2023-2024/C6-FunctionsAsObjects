@@ -1,4 +1,6 @@
-import pygame 
+import pygame
+from Button import *
+
 pygame.init() 
 
 #Creating width and height for screen/background
@@ -45,6 +47,11 @@ class Game:
         self.start_x = (BACKGROUND_WIDTH - LEVEL_SIZE * TILE_SIZE) // 2
         self.start_y = (BACKGROUND_HEIGHT - LEVEL_SIZE * TILE_SIZE) // 1.2
         self.draw_tiles()
+        self.button_list = []
+        self.button_list.append(Button(self, (255, 255, 255), (0, 0, 0), BACKGROUND_WIDTH - 220, 20, 150, 50, "Shuffle"))
+        self.button_list.append(Button(self, (255, 255, 255), (0, 0, 0), BACKGROUND_WIDTH - 220, 90, 150, 50, "Reset"))
+
+
 
     def create_game(self):
         grid = []
@@ -70,7 +77,10 @@ class Game:
         self.background.fill((255, 255, 255))  # White background
         self.all_sprites.draw(self.background)
         self.draw_grid()
+        for button in self.button_list:
+            button.draw(self.background)
         pygame.display.flip()
+
 
 
 
