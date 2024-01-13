@@ -19,6 +19,7 @@ class Button:
         self.width, self.height = width, height
         self.text = text
 
+
     def draw(self, screen):
         pygame.draw.rect(screen, self.outline, (self.x - 2, self.y - 2, self.width + 4, self.height + 4))
         pygame.draw.rect(screen, self.colour, (self.x, self.y, self.width, self.height))
@@ -29,3 +30,13 @@ class Button:
 
     def is_over(self, mouse_x, mouse_y):
         return self.x <= mouse_x <= self.x + self.width and self.y <= mouse_y <= self.y + self.height
+
+
+
+    def check_action(self):
+        if self.text == "Shuffle":
+         print("Shuffle button pressed")  # Debug print
+         self.game.shuffle_tiles()
+        elif self.text == "Reset":
+         print("Reset button pressed")  # Debug print
+         self.game.new_game()

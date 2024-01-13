@@ -1,10 +1,12 @@
 import pygame
 from grid import *
 
+
 pygame.init()
 
-game = Game()
+game = Game() 
 
+    
 # Initialize the TileClickHandler
 click_handler = TileClickHandler(game)
 
@@ -16,6 +18,13 @@ while run:
             run = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
             click_handler.handle_click(pygame.mouse.get_pos())
+    
+        game.draw()
+        pygame.display.flip() 
+   
+pygame.quit()
+    
+    
+    
 
-    game.draw()
-    pygame.display.flip()
+
