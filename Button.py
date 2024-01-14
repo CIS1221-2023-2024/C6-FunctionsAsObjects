@@ -1,6 +1,8 @@
-import pygame 
+
 import pygame
+import random 
 pygame.init()
+
 from grid import *
 
 
@@ -50,3 +52,5 @@ class Button:
 
     def is_over(self, mouse_x, mouse_y):
         return self.x <= mouse_x <= self.x + self.width and self.y <= mouse_y <= self.y + self.height
+    
+    

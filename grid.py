@@ -87,7 +87,6 @@ class Game:
 
 
 
-
 # Making the actual grid 
     def draw_grid(self):
      for row in range(LEVEL_SIZE + 1):
@@ -116,7 +115,24 @@ class Game:
             for tile_sprite in self.all_sprites:
                 if tile_sprite.id == tile_id:
                     tile_sprite.rect.topleft = (col_index * TILE_SIZE + self.start_x, row_index * TILE_SIZE + self.start_y)
+     
                     break
+
+    def shuffle_tiles(self):
+        # Flatten the grid to a list, shuffle it, then rebuild the grid
+        flat_list = [tile for row in self.tiles_grid for tile in row if tile != 0]
+        random.shuffle(flat_list)
+
+        # Rebuild the grid
+        tile_counter = 0
+        for i in range(LEVEL_SIZE):
+            for j in range(LEVEL_SIZE):
+                if self.tiles_grid[i][j] != 0:  # Avoid the empty tile
+                    self.tiles_grid[i][j] = flat_list[tile_counter]
+                    tile_counter += 1
+
+        # Update tile positions
+        self.update_tile_positions()            
 
 # TileClickHandler class
 class TileClickHandler:
@@ -134,7 +150,16 @@ class TileClickHandler:
             self.game.tiles_grid[pos2[1]][pos2[0]], self.game.tiles_grid[pos1[1]][pos1[0]]
         self.game.update_tile_positions()  # Update tile positions after switching
 
+    
     def handle_click(self, mouse_pos):
+        # Check if a button was clicked
+        for button in self.game.button_list:
+            if button.is_over(mouse_pos[0], mouse_pos[1]):
+                if button.text == "Shuffle":
+                    self.game.shuffle_tiles()
+                    return  # No need to check the rest once we found our button
+
+        # Handle tile click logic as before
         grid_x, grid_y = (mouse_pos[0] - self.game.start_x) // TILE_SIZE, (mouse_pos[1] - self.game.start_y) // TILE_SIZE
         grid_x, grid_y = int(grid_x), int(grid_y)
         print(f"Clicked on tile at grid position: ({grid_x}, {grid_y})")
