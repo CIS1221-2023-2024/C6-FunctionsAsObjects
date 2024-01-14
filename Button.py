@@ -1,12 +1,25 @@
+import pygame 
 import pygame
 pygame.init()
+from grid import *
+
 
 class UIElement:
-    def __init__(self, x, y, text):
+ def Anst (self, x, y, text):
+  self.x, self.y = x, y
+  self.text = text
+  
+
+def draw(self, screen):
+ font = pygame.font.SysFont("Consolas", 50)
+ text = font.render(self.text, True, 255, 255, 255)
+ screen.blit(text, (self.x, self.y))
+
+def __init__(self, x, y, text):
         self.x, self.y = x, y
         self.text = text
 
-    def draw(self, screen):
+def draw(self, screen):
         font = pygame.font.SysFont("Consolas", 50)
         text = font.render(self.text, True, (255, 255, 255))
         screen.blit(text, (self.x, self.y))
@@ -19,10 +32,17 @@ class Button:
         self.width, self.height = width, height
         self.text = text
 
-
     def draw(self, screen):
+        # Draw the button outline
         pygame.draw.rect(screen, self.outline, (self.x - 2, self.y - 2, self.width + 4, self.height + 4))
+        # Draw the button itself
         pygame.draw.rect(screen, self.colour, (self.x, self.y, self.width, self.height))
+        # Render the text on the button
+        font = pygame.font.SysFont("Arial", 30)
+        text = font.render(self.text, True, (255, 255, 255))  # White text color
+        draw_x = self.x + (self.width / 2 - text.get_width() / 2)
+        draw_y = self.y + (self.height / 2 - text.get_height() / 2)
+        screen.blit(text, (draw_x, draw_y))
         font = pygame.font.SysFont("Consolas", 20)
         text_surface = font.render(self.text, True, ( 0, 0 , 0))
         text_rect = text_surface.get_rect(center=(self.x + self.width / 2, self.y + self.height / 2))
@@ -30,13 +50,3 @@ class Button:
 
     def is_over(self, mouse_x, mouse_y):
         return self.x <= mouse_x <= self.x + self.width and self.y <= mouse_y <= self.y + self.height
-
-
-
-    def check_action(self):
-        if self.text == "Shuffle":
-         print("Shuffle button pressed")  # Debug print
-         self.game.shuffle_tiles()
-        elif self.text == "Reset":
-         print("Reset button pressed")  # Debug print
-         self.game.new_game()
