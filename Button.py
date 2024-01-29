@@ -27,12 +27,17 @@ def draw(self, screen):
         screen.blit(text, (self.x, self.y))
 
 class Button:
-    def __init__(self, game, colour, outline, x, y, width, height, text):
+    def __init__(self, game, colour, outline, x, y, width, height, text, callback=None):
         self.game = game
         self.colour, self.outline = colour, outline
         self.x, self.y = x, y
         self.width, self.height = width, height
         self.text = text
+        self.callback = callback
+    
+    def handle_click(self):
+        if self.callback:
+            self.callback()
 
     def draw(self, screen):
         # Draw the button outline

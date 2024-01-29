@@ -1,5 +1,5 @@
 import pygame 
-import pygame
+
 from Button import *
 
 pygame.init() 
@@ -66,7 +66,7 @@ class Game:
         self.start_y = (BACKGROUND_HEIGHT - LEVEL_SIZE * TILE_SIZE) // 1.2
         self.draw_tiles()
         self.button_list = []
-        self.button_list.append(Button(self, (255, 255, 255), (0, 0, 0), BACKGROUND_WIDTH - 220, 20, 150, 50, "Shuffle"))
+        self.button_list.append(Button(self, (255, 255, 255), (0, 0, 0), BACKGROUND_WIDTH - 220, 20, 150, 50, "Shuffle", lambda: self.shuffle_tiles()))
         self.button_list.append(Button(self, (255, 255, 255), (0, 0, 0), BACKGROUND_WIDTH - 220, 90, 150, 50, "Reset"))
 
 
@@ -77,15 +77,15 @@ class Game:
             tile_text = str(tile) if tile != 0 else "empty"
             Tile(self, x, y, tile_text, tile) 
 
-    def draw(self):
+    def draw(self, draw_grid_method):
         self.background.fill((255, 255, 255))  # White background
         self.all_sprites.draw(self.background)
-        self.draw_grid()
+        draw_grid_method()
         for button in self.button_list:
             button.draw(self.background)
         pygame.display.flip()
 
-
+ 
 
 # Making the actual grid 
     def draw_grid(self):
@@ -132,7 +132,8 @@ class Game:
                     tile_counter += 1
 
         # Update tile positions
-        self.update_tile_positions()            
+        self.update_tile_positions()   
+        pass         
 
 # TileClickHandler class
 class TileClickHandler:
@@ -151,7 +152,7 @@ class TileClickHandler:
         self.game.update_tile_positions()  # Update tile positions after switching
 
     
-    def handle_click(self, mouse_pos):
+    def handle_click(self, mouse_pos, action_function):
         # Check if a button was clicked
         for button in self.game.button_list:
             if button.is_over(mouse_pos[0], mouse_pos[1]):
@@ -167,4 +168,11 @@ class TileClickHandler:
         if 0 <= grid_x < LEVEL_SIZE and 0 <= grid_y < LEVEL_SIZE:
             blank_x, blank_y = self.get_blank_position()
             if (abs(blank_x - grid_x) == 1 and blank_y == grid_y) or (abs(blank_y - grid_y) == 1 and blank_x == grid_x):
-                self.switch_tiles((grid_x, grid_y), (blank_x, blank_y))
+                pos1 = (grid_x, grid_y)
+                pos2 = (blank_x, blank_y)
+                self.switch_tiles(pos1, pos2)
+                action_function(pos1, pos2)
+                
+               
+game = Game()
+click_handler = TileClickHandler(game)
