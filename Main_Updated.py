@@ -1,4 +1,5 @@
 import pygame
+
 from grid import *
 
 
@@ -17,6 +18,7 @@ while run:
         if event.type == pygame.QUIT:
             run = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
+            button_clicked = True 
             mouse_pos = pygame.mouse.get_pos()
             for button in game.button_list:
                 if button.is_over(mouse_pos[0], mouse_pos[1]):
