@@ -1,8 +1,9 @@
 package SliderPuzzle;
 
+import javax.swing.JOptionPane;
 public class Slider_Game_Model {
-    private static final int ROWS = 3; // number of rows
-    private static final int COLS = 3; // number of coloums
+    private static final int ROWS = 4;  // number of rows
+    private static final int COLS = 4; // number of coloums
     private Tile[][] contents;
     private Tile emptyTile;
 
@@ -29,7 +30,7 @@ public class Slider_Game_Model {
         emptyTile.setFace(null);
 
         // Shuffle the tiles
-        for (int i = 0; i < ROWS * COLS; i++) {
+        for (int i = 0; i < ROWS * COLS * 2 ; i++) {
             int r = (int) (Math.random() * ROWS);
             int c = (int) (Math.random() * COLS);
             _moveTile(r, c);
@@ -63,7 +64,7 @@ public class Slider_Game_Model {
     }
 
     // checking if game is over
-    public boolean isGameOver() {
+    public boolean isPuzzleCompleted() {
         for (int r = 0; r < ROWS; r++) {
             for (int c = 0; c < COLS; c++) {
                 Tile tile = contents[r][c];
@@ -72,6 +73,9 @@ public class Slider_Game_Model {
                 }
             }
         }
+
+        JOptionPane.showMessageDialog(null,
+                "Congratulations, You Won The Game!!!\n");
         return true;
     }
 
@@ -100,4 +104,3 @@ public class Slider_Game_Model {
         }
     }
 }
-
