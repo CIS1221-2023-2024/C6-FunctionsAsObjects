@@ -24,19 +24,30 @@ public class Slider_Game_Model {
         for (int r = 0; r < ROWS; r++) {
             for (int c = 0; c < COLS; c++) {
                 contents[r][c] = new Tile(r, c, "" + (r * COLS + c + 1));
+
             }
         }
         emptyTile = contents[ROWS - 1][COLS - 1];
         emptyTile.setFace(null);
 
-        // Shuffle the tiles
-        for (int i = 0; i < ROWS * COLS * 2 ; i++) {
-            int r = (int) (Math.random() * ROWS);
-            int c = (int) (Math.random() * COLS);
-            _moveTile(r, c);
-        }
+        do {
+            // Shuffle the tiles
+            for (int i = 0; i < ROWS * COLS * 26; i++) {
+                int r = (int) (Math.random() * ROWS);
+                int c = (int) (Math.random() * COLS);
+                _moveTile(r, c);
+            }
+        }while(!isPuzzleSolvable());
     }
-
+private boolean isPuzzleSolvable(){
+    int reverse = Num_Reverse();
+    int blankRowFromBottom = ROWS - (emptyTile.row + 1);
+    if (ROWS % 2 == 0) { // If the grid is even
+        return (blankRowFromBottom % 2 == 0) == (reverse % 2 != 0);
+    } else { // If the grid is odd
+        return reverse% 2 == 0;
+    }
+}
     public boolean _moveTile(int r, int c) {
         return checkEmpty(r, c, -1, 0) || checkEmpty(r, c, 1, 0) ||
                 checkEmpty(r, c, 0, -1) || checkEmpty(r, c, 0, 1);
@@ -63,6 +74,25 @@ public class Slider_Game_Model {
         return r >= 0 && r < ROWS && c >= 0 && c < COLS;
     }
 
+    private int Num_Reverse(){
+        int reverse = 0;
+        for (int i = 0; i < ROWS * COLS; i++) {
+            int currentRow = i / COLS;
+            int currentValue = contents[currentRow][i % COLS] != emptyTile ? Integer.parseInt(contents[currentRow][i % COLS].getFace()) : 0;
+            if (currentValue != 0) {
+                for (int j = i + 1; j < ROWS * COLS; j++) {
+                    int nextRow = j / COLS;
+                    int nextValue = contents[nextRow][j % COLS] != emptyTile ? Integer.parseInt(contents[nextRow][j % COLS].getFace()) : 0;
+                    if (currentValue > nextValue && nextValue != 0) {
+                        reverse++;
+                    }
+                }
+            }
+        }
+        return reverse;
+
+    }
+
     // checking if game is over
     public boolean isPuzzleCompleted() {
         for (int r = 0; r < ROWS; r++) {
@@ -75,7 +105,7 @@ public class Slider_Game_Model {
         }
 
         JOptionPane.showMessageDialog(null,
-                "Congratulations, You Won The Game!!!\n");
+                "Congratulations, You Won The Game!\n");
         return true;
     }
 
@@ -104,3 +134,4 @@ public class Slider_Game_Model {
         }
     }
 }
+Write to India Vella
