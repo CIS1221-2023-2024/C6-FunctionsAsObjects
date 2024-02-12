@@ -7,37 +7,30 @@ from grid import *
 
 
 class UIElement:
- def Anst (self, x, y, text):
-  self.x, self.y = x, y
-  self.text = text
+    def Anst (self, x, y, text):
+       self.x, self.y = x, y
+       self.text = text
   
 
-def draw(self, screen):
- font = pygame.font.SysFont("Consolas", 50)
- text = font.render(self.text, True, 255, 255, 255)
- screen.blit(text, (self.x, self.y))
+    def draw(self, screen):
+        font = pygame.font.SysFont("Consolas", 50)
+        text_render = font.render(self.text, True, (255, 255, 255))
+        screen.blit(text_render, (self.x, self.y))
 
-def __init__(self, x, y, text):
+    def __init__(self, x, y, text):
         self.x, self.y = x, y
         self.text = text
 
-def draw(self, screen):
-        font = pygame.font.SysFont("Consolas", 50)
-        text = font.render(self.text, True, (255, 255, 255))
-        screen.blit(text, (self.x, self.y))
+    
 
 class Button:
-    def __init__(self, game, colour, outline, x, y, width, height, text, callback=None):
+    def __init__(self, game, colour, outline, x, y, width, height, text, action =None):
         self.game = game
         self.colour, self.outline = colour, outline
         self.x, self.y = x, y
         self.width, self.height = width, height
         self.text = text
-        self.callback = callback
-    
-    def handle_click(self):
-        if self.callback:
-            self.callback()
+        self.action = action
 
     def draw(self, screen):
         # Draw the button outline
@@ -56,6 +49,8 @@ class Button:
         screen.blit(text_surface, text_rect)
 
     def is_over(self, mouse_x, mouse_y):
-        return self.x <= mouse_x <= self.x + self.width and self.y <= mouse_y <= self.y + self.height
+         return self.x <= mouse_x <= self.x + self.width and self.y <= mouse_y <= self.y + self.height
     
-    
+    def click(self):
+        if self.action:
+             self.action()
