@@ -9,7 +9,7 @@ public class Slider_GameGUI extends Container {
     private final PuzzleGraphicsPanel puzzleGraphics;
     private final Slider_Game_Model puzzleModel = new Slider_Game_Model();
 
-    // Constructing the GUI
+    //Constructing the GUI
     public Slider_GameGUI() {
         // Initialize puzzleGraphics before using it
         puzzleGraphics = new PuzzleGraphicsPanel();
@@ -42,7 +42,7 @@ public class Slider_GameGUI extends Container {
         public PuzzleGraphicsPanel() {
             _biggerFont = new Font("SansSerif", Font.BOLD, CELL_SIZE / 2);
             this.setPreferredSize(new Dimension(CELL_SIZE * COLS, CELL_SIZE * ROWS));
-            this.setBackground(Color.BLACK); //choosing background colour
+            this.setBackground(Color.BLACK);
             this.addMouseListener(new MouseAdapter() {
 
                 public void mousePressed(MouseEvent e) {
