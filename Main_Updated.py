@@ -12,26 +12,19 @@ click_handler = TileClickHandler(game)
 
 # Main game loop
 run = True
+event_handlers = {
+    pygame.QUIT: lambda: setattr(run, 'value', False),
+    pygame.MOUSEBUTTONDOWN: lambda: click_handler.handle_click(pygame.mouse.get_pos())
+}
+
 while run:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            mouse_pos = pygame.mouse.get_pos()
-            for button in game.button_list:
-                if button.is_over(mouse_pos[0], mouse_pos[1]):
-                  button.handle_click()
-                  button_clicked = False
-                  break
-
-            if not button_clicked:
-             click_handler.handle_click(mouse_pos, click_handler.switch_tiles)
-        
+        handler = event_handlers.get(event.type)
+        if handler:
+            handler()
     
-    game.draw(game.draw_grid)
+    game.draw()
     pygame.display.flip() 
-   
-pygame.quit()
     
     
     
