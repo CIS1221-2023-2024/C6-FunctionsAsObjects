@@ -15,9 +15,10 @@ In the end, the performance of both languages will be compared and analyzed to s
 # How to run
 
 ## Programming Language: Python
-Make sure  python version: python 3.12(64-bit) is installed
-IDE being used: Visual Studio Code
+Make sure Python version: Python 3.12(64-bit) is installed
 
+
+IDE being used: Visual Studio Code
 After downloading Visual Studio Code make sure to install these 6 extensions before running the code: 
 - Code Runner
 - Pygame Snippets 
