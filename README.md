@@ -10,7 +10,13 @@ These concepts will be explored through the creation of a 2D slider puzzle game 
 
 In the end, the performance of both languages will be compared and analyzed to see which language is more efficient for a 2D slider puzzle game. 
 
+## Team
+The people behind this project are:
 
+- India Vella
+- Nirvana Mangion
+
+Work was done together. All code was written together.
 
 # How to run
 
@@ -35,9 +41,4 @@ The code should run normally if these 5 extensions are installed.
 
 ## Programming Language: Java
 
-## Team
-The people behind this project are:
 
-- India Vella
-- Nirvana Mangion
-  
