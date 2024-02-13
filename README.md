@@ -37,6 +37,7 @@ After downloading Visual Studio Code make sure to install these 6 extensions bef
 
 The code should run normally if these 5 extensions are installed.
 
+Python code file: [Python.md](https://github.com/CIS1221-2023-2024/C6-FunctionsAsObjects/tree/main/Python)
 
 
 ## Programming Language: Java
