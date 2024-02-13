@@ -1,6 +1,6 @@
 
 # Introduction 
-#Aim of the project: 
+# Aim of the project: 
 This project aims to explore the following concepts:
 - Functions as Objects 
 -	Event Handling 
