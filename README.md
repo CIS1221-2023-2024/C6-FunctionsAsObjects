@@ -32,7 +32,8 @@ The code should run normally if these 5 extensions are installed.
 
 ## Programming Language: Java
 
-##Team
+## Team
+The people behind this project are:
 
 - India Vella
 - Nirvana Mangion
