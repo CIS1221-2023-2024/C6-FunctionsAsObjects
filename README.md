@@ -1,7 +1,7 @@
 
 Introduction 
 Aim of the project: 
-The aim of this project is to explore the concepts:
+This project aims to explore the following concepts:
 •	Functions as Objects 
 •	Event Handling 
 •	Lambda expressions 
