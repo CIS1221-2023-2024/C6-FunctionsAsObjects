@@ -41,5 +41,5 @@ The code should run normally if these 5 extensions are installed.
 
 ## Programming Language: Java
 
-#Wiki
+# Wiki
 {https://github.com/CIS1221-2023-2024/C6-FunctionsAsObjects/tree/main/Wiki}
