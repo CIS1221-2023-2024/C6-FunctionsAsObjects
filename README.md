@@ -12,11 +12,9 @@ In the end, the performance of both languages will be compared and analyzed to s
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
+# How to run
+## Programming Language: Python
 
-2D-Slider Game Project 
-Steps to run the code
-
-Programming Language: Python (currently) 
 IDE: Visual Studio Code
 
 After downloading Visual Studio Code make sure to install these 6 extensions before running the code: 
