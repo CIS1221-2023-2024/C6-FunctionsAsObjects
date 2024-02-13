@@ -42,5 +42,6 @@ Python code file: [Python.md](https://github.com/CIS1221-2023-2024/C6-FunctionsA
 
 ## Programming Language: Java
 
+Java code file: [Java.md](https://github.com/CIS1221-2023-2024/C6-FunctionsAsObjects/tree/main/java)
 # Wiki
 [Wiki.md](https://github.com/CIS1221-2023-2024/C6-FunctionsAsObjects/tree/main/Wiki)
