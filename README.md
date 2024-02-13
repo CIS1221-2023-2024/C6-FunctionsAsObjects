@@ -41,6 +41,21 @@ Python code file: [Python.md](https://github.com/CIS1221-2023-2024/C6-FunctionsA
 
 
 ## Programming Language: Java
+Make sure Intellij version: IntelliJ IDEA Community Edition 2023.3.2 is installed
+
+
+IDE being used: Intellij IDEA Community Edition 2023
+
+
+After Downloading Intellij make sure you download the Java Development Kit (JDK).
+Before adding the code to intellij, It's important to make sure that you've created a package called "SliderPuzzle".
+You can do this by:
+1. Right clicking on the src file.
+2. Go to new
+3. Click on Package and input the name SliderPuzzle
+4. After doing so, place the files (found in Java.md) in the package.
+
+Once these are done, the code should run normally.
 
 Java code file: [Java.md](https://github.com/CIS1221-2023-2024/C6-FunctionsAsObjects/tree/main/java)
 # Wiki
