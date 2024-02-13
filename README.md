@@ -10,7 +10,7 @@ These concepts will be explored through the creation of a 2D slider puzzle game 
 
 In the end, the performance of both languages will be compared and analyzed to see which language is more efficient for a 2D slider puzzle game. 
 
-## Team
+# Team
 The people behind this project are:
 
 - India Vella
