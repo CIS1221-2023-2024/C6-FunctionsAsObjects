@@ -19,12 +19,12 @@ In the end, the performance of both languages will be compared and analyzed to s
 IDE: Visual Studio Code
 
 After downloading Visual Studio Code make sure to install these 6 extensions before running the code: 
-• Code Runner
-• Pygame Snippets 
-• Pylance 
-• Python 
-• Python Resource Monitor
-• Tkinter
+- Code Runner
+- Pygame Snippets 
+- Pylance 
+- Python 
+- Python Resource Monitor
+- Tkinter
 
 The code should run normally if these 5 extensions are installed.
 
