@@ -13,6 +13,7 @@ In the end, the performance of both languages will be compared and analyzed to s
 
 
 # How to run
+
 ## Programming Language: Python
 
 IDE: Visual Studio Code
@@ -26,5 +27,7 @@ After downloading Visual Studio Code make sure to install these 6 extensions bef
 • Tkinter
 
 The code should run normally if these 5 extensions are installed.
+
+
 
 ## Programming Language: Java
