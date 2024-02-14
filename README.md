@@ -51,9 +51,13 @@ pip3 install pygame
 ```
 
 
+
 ### Note
 When opening the code, you might encounter a 'problem' with the Button indentation in grid.py. This is a problem with Visual Studio code and not the code itself. If you encounter this issue please move the line of code and return it to its original indentation until the 'problem' is resolved.
 
+```Python
+ self.shuffle_button = Button(self, (255, 255, 255), (0, 0, 0), BACKGROUND_WIDTH - 220, 20, 150, 50, "Shuffle", shuffle_button_action)
+```
 
 
 Python code file: [Python.md](https://github.com/CIS1221-2023-2024/C6-FunctionsAsObjects/tree/main/Python)
