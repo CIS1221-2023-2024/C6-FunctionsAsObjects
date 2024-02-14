@@ -83,5 +83,8 @@ Once these are done, the code should run normally.
 
 ### Java code file
 [Java.md](https://github.com/CIS1221-2023-2024/C6-FunctionsAsObjects/tree/main/java)
+
+# Assigned Tasks 
+[Assigned_tasks.md](https://github.com/orgs/CIS1221-2023-2024/projects/7)
 # Wiki
 [Wiki.md](https://github.com/CIS1221-2023-2024/C6-FunctionsAsObjects/tree/main/Wiki)
