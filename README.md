@@ -37,6 +37,7 @@ After downloading Visual Studio Code make sure to install these 6 extensions bef
 
 The code should run normally if these 5 extensions are installed.
 
+### Installing Pygame
 If pygame is not working even though the extension has been downloaded, follow these steps:
 
 1. Open your terminal/command prompt and check if python and pip are installed
@@ -49,7 +50,7 @@ If pygame is not working even though the extension has been downloaded, follow t
 
 
 ### Note
-
+When opening the code, you might encounter a'problem' with the Button indentation in grid.py. This is a problem with visual studio code and not the code itself. If you encounter this issue please move the the line of code and return it to the original indentation until the 'problem' is resolved.
 
 
 
