@@ -37,6 +37,17 @@ After downloading Visual Studio Code make sure to install these 6 extensions bef
 
 The code should run normally if these 5 extensions are installed.
 
+If pygame is not working even though the extension has been downloaded, follow these steps:
+
+1. Open your terminal/command prompt and check if python and pip are installed
+   - To check Python: python --version or python3 --version
+   - To check pip: pip --version or pip3 --version
+
+2. install pygame:
+
+3. verify installation:
+
+
 Python code file: [Python.md](https://github.com/CIS1221-2023-2024/C6-FunctionsAsObjects/tree/main/Python)
 
 
