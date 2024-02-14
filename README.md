@@ -43,12 +43,12 @@ If pygame is not working even though the extension has been downloaded, follow t
 1. Open your terminal/command prompt and check if python and pip are installed
    - To check Python: python --version or python3 --version
    - To check pip: pip --version or pip3 --version
+     
 
 2. install pygame:
 ```python
-pip install pygame
+pip3 install pygame
 ```
-3. verify installation:
 
 
 ### Note
