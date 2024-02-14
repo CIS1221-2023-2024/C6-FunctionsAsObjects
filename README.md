@@ -16,7 +16,7 @@ The people behind this project are:
 - India Vella
 - Nirvana Mangion
 
-Work was done together. All code was written together.
+All work was done together, meaning all code was written together.
 
 # How to run
 
