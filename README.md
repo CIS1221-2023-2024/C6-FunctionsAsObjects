@@ -50,7 +50,7 @@ If pygame is not working even though the extension has been downloaded, follow t
 
 
 ### Note
-When opening the code, you might encounter a'problem' with the Button indentation in grid.py. This is a problem with visual studio code and not the code itself. If you encounter this issue please move the the line of code and return it to the original indentation until the 'problem' is resolved.
+When opening the code, you might encounter a'problem' with the Button indentation in grid.py. This is a problem with visual studio code and not the code itself. If you encounter this issue please move the line of code and return it to its original indentation until the 'problem' is resolved.
 
 
 
