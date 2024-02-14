@@ -16,5 +16,6 @@ public class Slider_Game {
         window.setVisible(true);// Make sure the window is visible
 
     }
+}
 
 
