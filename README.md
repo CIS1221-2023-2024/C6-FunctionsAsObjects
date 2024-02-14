@@ -48,6 +48,11 @@ If pygame is not working even though the extension has been downloaded, follow t
 3. verify installation:
 
 
+### Note
+
+
+
+
 Python code file: [Python.md](https://github.com/CIS1221-2023-2024/C6-FunctionsAsObjects/tree/main/Python)
 
 
