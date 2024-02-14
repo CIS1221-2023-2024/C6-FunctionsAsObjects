@@ -45,12 +45,14 @@ If pygame is not working even though the extension has been downloaded, follow t
    - To check pip: pip --version or pip3 --version
 
 2. install pygame:
-
+```python
+pip install pygame
+```
 3. verify installation:
 
 
 ### Note
-When opening the code, you might encounter a'problem' with the Button indentation in grid.py. This is a problem with visual studio code and not the code itself. If you encounter this issue please move the line of code and return it to its original indentation until the 'problem' is resolved.
+When opening the code, you might encounter a 'problem' with the Button indentation in grid.py. This is a problem with Visual Studio code and not the code itself. If you encounter this issue please move the line of code and return it to its original indentation until the 'problem' is resolved.
 
 
 
